@@ -1,53 +1,76 @@
-🗃️ MongoDB POJO Mapping Example (Java)
-This project demonstrates how to use Plain Old Java Objects (POJOs) to interact with MongoDB in a Java application. It shows how to map Java classes directly to MongoDB documents for clean, type-safe, and object-oriented data handling.
+🌐 Spring Boot Web App – User Management System
+This is a simple Spring Boot web application for managing users. It demonstrates how to build a CRUD-based web app with:
 
- Tech Stack
-Java
+Thymeleaf for frontend rendering
 
-MongoDB
+Form validation using Jakarta Validation
 
-MongoDB Java Driver (or Spring Data MongoDB, if applicable)
+Custom validation for unique email addresses
 
-Maven/Gradle
+Enum-based dropdown fields (e.g., Gender, Country)
 
-📦 Features
-Basic POJO model class (Student)
+Pagination and sorting using Pageable
 
-Seamless mapping between Java objects and MongoDB documents
+PostgreSQL integration
 
-CRUD operations using MongoDB Java APIs
+Bootstrap for styling
 
-Easily extendable for real-world applications
+✨ Features
+Add users with:
 
-📁 Sample Document Structure in MongoDB
-json
+Name (2–20 characters)
+
+Valid and unique email address
+
+Gender selection (MALE, FEMALE, OTHER)
+
+Country selection (INDIA, USA, CANADA, UK, AUSTRALIA)
+
+Form-level and field-level validation using annotations
+
+Custom @UniqueEmail annotation
+
+Paginated and sortable user list
+
+Clean error handling with fallback page
+
+Responsive UI with Bootstrap
+
+🔧 Tech Stack
+
+Technology	Description
+Spring Boot	Backend framework
+Thymeleaf	Templating engine for UI
+PostgreSQL	Relational database
+Spring Data JPA	ORM for DB operations
+Hibernate	JPA provider
+Bootstrap	UI styling framework
+🧩 Project Structure
+graphql
 Copy
 Edit
-{
-  "_id": "123abc",
-  "name": "Alice",
-  "age": 30
-}
-🚀 Getting Started
-Clone the repo:
+├── controller/        # Web controllers for handling HTTP requests
+├── entity/            # JPA entities (User with enums)
+├── repository/        # Spring Data JPA interfaces
+├── services/          # Custom service logic (optional)
+├── validation/        # Custom validators like @UniqueEmail
+├── templates/         # Thymeleaf HTML templates
+├── application.yml    # DB config and properties
+🚀 How to Run
+Clone the repository
 
+Configure your PostgreSQL connection in application.yml
 
-git clone https://github.com/your-username/mongodb-pojo-example.git
-Configure your MongoDB URI and database settings in the code.
+Run the application:
 
-Run the project:
+bash
+Copy
+Edit
+./mvnw spring-boot:run
+Open your browser and go to http://localhost:8080
 
+📸 Screenshots
+You can add screenshots of the user form and paginated list here.
 
-mvn clean install
-java -jar target/your-app.jar
-🤓 Why POJO?
-POJOs offer a simple and clean way to handle data in Java, enabling:
-
-Better readability
-
-Type safety
-
-Easy unit testing
-
-Smooth integration with frameworks like Spring Data MongoDB
-
+📦 API Endpoints (Web UI)
+/ – List all users with pagination
